@@ -1,100 +1,240 @@
-body {
+* {
 	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	color: #333;
+    font-weight: 400;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-span{
-	font-size: 14px;
-	color: #000;
-	transition: 0.3s;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-img{
-	width: 70px;
-	border-radius: 35px;
-	margin: 10px 15px 0 0;
+html {
+    font-size: 10px;
+    height: 100%;
 }
 
-table {
-	margin: 0;
-	float: right;
+.container {
+    margin: 0 auto;
+    display: flex;
+    font-size: 1.6rem;
 }
 
-table tr td:first-child {
-	padding-right: 5px;
+h1, 
+h2,
+h3 {
+    margin: 0;
+}
+
+.h2 {
+    margin: 4rem 0;
+    font-weight: 500;
+    text-align: center;
+    color: #2c91eb;
+    font-size: 2.8rem;
+}
+
+.h3 {
+    font-weight: 500;
+    margin-top: 4rem;
+    color: gray;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    margin-bottom: 1rem;
+    position: relative;
 }
 
 a {
-	text-decoration: none;
-	color: #000;
-	font-weight: bold;
-	transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
 }
 
 a:hover {
-	color: #1A6DBB;
-	transition: 0.3s;
+    color: #e9a256;
 }
 
-::-moz-selection {
-	color: white; 
-	background: #1A6DBB;
+.hr {
+    background: linear-gradient(45deg, #333, #ddd);
+    border: none;
+    height: 0.1rem;
 }
 
-::selection {
-	color: white; 
-	background: #1A6DBB;
+.bold {
+    font-weight: 700;
 }
 
-.content {
-	max-width: 600px;
-	margin: 0 auto;
+.hidden {
+    display: none;
 }
 
-.intro {
-	margin: 150px 0 90px 0;
-	text-align: center;
+.show {
+    display: block;
 }
 
-.intro span {
-	margin-bottom: 10px;
-	font-size: 24px;
-	line-height: 40px;
+.aside {
+    max-width: 34%;
+    background: #2e2e35;
+    color: #d8d8d8;
+    box-shadow: 0 5px 0 0 black;
 }
 
-.intro span.highlight {
-	background-color: #333;
-	color: white;
+.container_aside {
+    padding: 0 4rem;
 }
 
-.intro span.highlight-red {
-	background-color: darkred;
-	color: white;
-	transition: 0.3s;
+.foto_img {
+    max-width: 100%;
+    box-shadow: 0 0 5px 0 white;
 }
 
-.intro span.highlight-red:hover {
-	background-color: red;
-	color: white;
-	transition: 0.3s;
+.skills_item,
+.experience_item,
+.qualification_item,
+.facts_item {
+    padding-left: 2rem;
 }
 
-@media (max-width: 360px) {
-	.intro {
-		margin: 50px 0 50px 0;
-	}
-	
-	.intro span {
-		font-size: 18px;
-		line-height: 28px;
-	}
-	
-	img{
-		display: none;
-	}
-	
-	table {
-		float: none;
-	}
+.skills_item::before,
+.experience_item::before,
+.qualification_item::before,
+.facts_item::before {
+    content: '';
+    width: 0.8rem;
+    height: 0.8rem;
+    border: none;
+    border-radius: 100%;
+    background-color: #e9a256;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+}
+
+.download_cv {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: #e9a256;
+}
+
+.download_cv a:hover {
+    color: gray;
+}
+
+.fas {
+    margin-right: 1rem;
+    color: #2c91eb;
+}
+
+/* .education_item:before {
+    content: '\1F7E0';
+    background: #e9a256;
+    margin-right: 1rem;
+} */
+
+.education_name {
+    color: white;
+    margin: 3rem 0 2rem 0;
+}
+
+.main {
+    padding: 5rem;
+}
+
+.name {
+    font-size: 6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.profession {
+    font-size: 2rem;
+    font-weight: 700;
+    color: gray;
+    margin-bottom: 2rem;
+}
+
+.qualification_text {
+    font-weight: 500;
+}
+
+.switch_wrap {
+    position: absolute;
+    right: 4rem;
+    top: 2rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    justify-content: center;
+    height: 2rem;
+}
+
+.switch-btn {
+    display: inline-block;
+    width: 4.6rem;
+    height: 2.5rem;
+    border-radius: 19px;
+    background: #d8d8d8;
+    box-shadow: 0 0 2px 0 #999999;
+    z-index: 0;
+    margin: 0 0.5rem;;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition-duration: 300ms;
+}
+
+.switch-btn::after {
+    content: "";
+    height: 2.1rem;
+    width: 2.1rem;
+    border-radius: 100%;
+    background: #e9a256;
+    box-shadow: 0 0 2px 0 #e9a256;
+    left: 2px;
+    top: 2px;
+    transition-duration: 300ms;
+    position: absolute;
+    z-index: 1;
+  }
+
+.switch-on::after {
+    left: 2.3rem;
+  }
+
+.flag {
+    height: 100%;
+}
+
+.flag_img {
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 780px) {
+
+    .container {
+        font-size: 1.4rem;
+    }
+
+    .container_aside {
+        padding: 0 3.5rem;
+    }
+    
+}
+
+@media (max-width: 599px) {
+
+    .aside {
+        display: none;
+    }
+
 }
